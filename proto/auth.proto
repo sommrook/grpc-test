@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service Auth {
+  rpc TokenCheck(AuthReq) returns (AuthRes) {}
+}
+
+
+message AuthReq {
+  string token = 1;
+}
+
+message AuthRes {
+  int32 user_id = 1;
+  string user_account = 2;
+  string created_date = 3;
+  string pwd_updated_date = 4;
+  int32 status_code = 5;
+  string response_code = 6;
+}
